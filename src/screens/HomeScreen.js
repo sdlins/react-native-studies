@@ -29,6 +29,12 @@ const estilos = StyleSheet.create({
     }
 })
 
+const assets = {
+    fundo: require('../../assets/fundo.png'),
+    logoCaixa: require('../../assets/logo-caixa.png'),
+    logo: require('../../assets/logo.png')
+}
+
 class HomeScreen extends Component {
     state = {
         contador: 0
@@ -44,15 +50,15 @@ class HomeScreen extends Component {
         const estiloDoTexto = this.state.contador % 2 === 0 ? { color: 'red' } : null
         return (
             <ImageBackground
-                source={require('../../assets/fundo.png')}
+                source={assets.fundo}
                 imageStyle={{ resizeMode: 'stretch' }}
                 style={estilos.fundo}
             >
                 <View style={estilos.wrapperLogoCaixa}>
-                    <Image source={require('../../assets/logo-caixa.png')}/>
+                    <Image source={assets.logoCaixa}/>
                 </View>
                 <View style={estilos.wrapperLogo}>
-                    <Image source={require('../../assets/logo.png')}/>
+                    <Image source={assets.logo}/>
                 </View>
                 <TouchableWithoutFeedback onPress={this.tratarContador}>
                     <View style={estilos.fundoBotao}>
