@@ -18,7 +18,7 @@ export default class ViagensScreen extends Component {
                 }}>
                     <Text>Mapa</Text>
                 </View>
-                <Viagem />
+                <Viagem destino='Viagem ABC' preco='R$ 3000' />
             </View>
         )
     }
