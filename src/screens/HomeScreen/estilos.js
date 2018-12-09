@@ -17,13 +17,19 @@ export default estilos = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
-    fundoBotao: {
+    botao: {
         backgroundColor: 'white',
         paddingBottom: 16,
-        paddingTop: 16
+        paddingTop: 16,
+        alignItems: 'center',
+        backgroundColor: '#0070AF'
     },
     textoBotao: {
         textAlign: 'center',
         fontSize: 18,
+        color: 'white',
+        width: 200,
+        paddingTop: 16,
+        paddingBottom: 16
     }
 })

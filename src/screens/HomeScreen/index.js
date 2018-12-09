@@ -1,16 +1,20 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text, ImageBackground, Image, TouchableWithoutFeedback } from 'react-native'
+import { View, Text, ImageBackground, Image, TouchableWithoutFeedback } from 'react-native'
 import assets from './assets'
-import estilso from './estilos'
+import estilos from './estilos'
 
 class HomeScreen extends Component {
+    static navigationOptions = {
+        header: null
+    }
+
     state = {
-        contador: 0
+        mostrar: true
     }
 
     tratarContador = () => {
         this.setState({
-            contador: ++this.state.contador
+            mostrar: !this.state.mostrar
         })
     }
 
@@ -28,11 +32,22 @@ class HomeScreen extends Component {
                 <View style={estilos.wrapperLogo}>
                     <Image source={assets.logo}/>
                 </View>
-                <TouchableWithoutFeedback onPress={this.tratarContador}>
-                    <View style={estilos.fundoBotao}>
-                        <Text style={[estilos.textoBotao, estiloDoTexto]}>Começar! {this.state.contador} </Text>
-                    </View>
-                </TouchableWithoutFeedback>
+                {
+                    this.state.mostrar !== true ?
+                        <TouchableWithoutFeedback onPress={this.tratarContador}>
+                            <View style={estilos.botao}>
+                                <Text style={[estilos.textoBotao, estiloDoTexto]}>Começar!</Text>
+                            </View>
+                        </TouchableWithoutFeedback>
+                    :
+                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ViagensScreen')}>
+                            <View style={estilos.botao}>
+                                <Image source={assets.pin} />
+                                <Text style={[estilos.textoBotao, estiloDoTexto]}>Vamos planejar sua primeira viagem</Text>
+                                <Image source={assets.setaDir} />
+                            </View>
+                        </TouchableWithoutFeedback>
+                }
             </ImageBackground>
         )
     }
