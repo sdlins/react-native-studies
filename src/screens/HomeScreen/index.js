@@ -1,39 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, View, Text, ImageBackground, Image, TouchableWithoutFeedback } from 'react-native'
-
-const estilos = StyleSheet.create({
-    fundo: {
-        flex: 1,
-        alignItems: 'stretch',
-        justifyContent: 'center',
-    },
-    wrapperLogo: {
-        flexDirection: 'row',
-        alignItems: 'flex-end',
-        justifyContent: 'center',
-        paddingBottom: 32
-    },
-    wrapperLogoCaixa: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    fundoBotao: {
-        backgroundColor: 'white',
-        paddingBottom: 16,
-        paddingTop: 16
-    },
-    textoBotao: {
-        textAlign: 'center',
-        fontSize: 18,
-    }
-})
-
-const assets = {
-    fundo: require('../../assets/fundo.png'),
-    logoCaixa: require('../../assets/logo-caixa.png'),
-    logo: require('../../assets/logo.png')
-}
+import assets from './assets'
+import estilso from './estilos'
 
 class HomeScreen extends Component {
     state = {
