@@ -18,13 +18,13 @@ const estilos = StyleSheet.create({
         alignItems: 'flex-end',
         justifyContent: 'flex-end',
     },
-    nome: {
+    textoViagem: {
         textAlign: 'right',
         backgroundColor: '#FFBC0C',
         paddingVertical: 4,
         paddingHorizontal: 8
     },
-    valor: {
+    valorViagem: {
         textAlign: 'right',
         backgroundColor: '#FFBC0C',
         paddingVertical: 4,

@@ -9,12 +9,12 @@ export default class ViagensScreen extends Component {
 
     render() {
         const viagens = [
-            { id: 1, destino: 'Casa ABC', preco: 'R$ 350' },
-            { id: 2, destino: 'Morro XYZ', preco: 'R$ 889' }
+            { id: 1, nome: 'Trilha Sertaneja', precoTotal: 'R$ 3500' },
+            { id: 2, nome: 'Festa Nordestina', precoTotal: 'R$ 4800' }
         ]
 
         renderizarViagem = ({item}) => {
-            return <Viagem destino={item.destino} preco={item.preco} />
+            return <Viagem onPress={() => { this.props.navigation.navigate('Viagem')} } nome={item.nome} precoTotal={item.precoTotal} />
         }
 
         return (
