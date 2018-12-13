@@ -1,17 +1,15 @@
 import React, { Component } from 'react'
 import { View, Text, FlatList, Image, ImageBackground, TouchableOpacity } from 'react-native'
-import estilos from '../ViagensScreen/Viagem/estilos.js'
+import { default as estilosViagem } from '../ViagensScreen/Viagem/estilos.js'
+import estilos from './estilos.js'
 
 class ViagemScreen extends Component {
     renderLocal = ({item}) => {
         return (
-            <View style={{
-                flex: 1,
-                marginBottom: 32
-            }}>
-                <Text style={{fontSize: 18, fontWeight: 'bold'}}>{item.nome}</Text>
+            <View style={estilos.itemLista}>
+                <Text style={estilos.nomeLocal}>{item.nome}</Text>
                 <Text>{item.desc}</Text>
-                <Text style={{position: 'absolute', right: 0, fontWeight: 'bold'}}>{item.preco}</Text>
+                <Text style={estilos.precoLocal}>{item.preco}</Text>
             </View>
         )
     }
@@ -40,43 +38,23 @@ class ViagemScreen extends Component {
             <View style={{flex: 1}}>
                 <ImageBackground
                     source={require('../../../assets/fundoViagem.png')}
-                    style={{
-                        height: 240,
-                        paddingHorizontal: 16,
-                        paddingVertical: 16,
-                        flexDirection: 'row',
-                        justifyContent: 'flex-end',
-                        alignItems: 'flex-end',
-                    }}
+                    style={estilos.fundoImagem}
                 >
                     <TouchableOpacity
                         onPress={() => {this.props.navigation.goBack()}}
-                        style={{
-                            position: 'absolute',
-                            top: 16,
-                            left: 16
-                        }}
+                        style={estilos.setaVoltar}
                     >
-                        <Image
-                            source={require('../../../assets/seta-esq.png')}
-
-                        />
+                        <Image source={require('../../../assets/seta-esq.png')} />
                     </TouchableOpacity>
-                    <Text style={estilos.nome}>{viagem.nome}</Text>
-                    <Text style={estilos.valor}>{viagem.preco}</Text>
+                    <Text style={estilosViagem.nome}>{viagem.nome}</Text>
+                    <Text style={estilosViagem.valor}>{viagem.preco}</Text>
                 </ImageBackground>
                 <FlatList
                     data={viagem.locais}
                     renderItem={this.renderLocal}
                     keyExtractor={item=>item.id.toString()}
-                    style={{
-                        flex: 1,
-                    }}
-                    contentContainerStyle={{
-                        paddingHorizontal: 16,
-                        paddingVertical: 16,
-                    }}
-                    h
+                    style={estilos.lista}
+                    contentContainerStyle={estilos.conteudoLista}
                 />
             </View>
         )

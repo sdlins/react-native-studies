@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { View, Text, FlatList } from 'react-native'
 import Viagem from './Viagem'
+import estilos from './estilos';
 
 export default class ViagensScreen extends Component {
     static navigationOptions = {
@@ -18,14 +19,8 @@ export default class ViagensScreen extends Component {
         }
 
         return (
-            <View style={{
-                flex: 1,
-                justifyContent: 'space-between'
-            }}>
-                <View style={{
-                    backgroundColor: 'red',
-                    flex: 1
-                }}>
+            <View style={estilos.wrapper}>
+                <View style={estilos.mapa}>
                     <Text>Mapa</Text>
                 </View>
                 <View>
