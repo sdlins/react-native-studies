@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { View, Text, FlatList } from 'react-native'
 import Viagem from './Viagem'
-import estilos from './estilos';
+import estilos from './estilos'
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'
 
 export default class ViagensScreen extends Component {
     static navigationOptions = {
@@ -20,8 +21,18 @@ export default class ViagensScreen extends Component {
 
         return (
             <View style={estilos.wrapper}>
-                <View style={estilos.mapa}>
-                    <Text>Mapa</Text>
+                <View style={estilos.wrapperMapa}>
+                    <MapView
+                        provider={PROVIDER_GOOGLE} // remove if not using Google Maps
+                        style={estilos.mapa}
+                        region={{
+                            latitude: -15.7941569,
+                            longitude: -47.8825289,
+                            latitudeDelta: 0.06,
+                            longitudeDelta: 0.06,
+                        }}
+                    >
+                    </MapView>
                 </View>
                 <View>
                     <FlatList
