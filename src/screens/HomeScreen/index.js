@@ -40,7 +40,7 @@ class HomeScreen extends Component {
                             </View>
                         </TouchableWithoutFeedback>
                     :
-                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('ViagensScreen')}>
+                        <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Viagens')}>
                             <View style={estilos.botao}>
                                 <Image source={assets.pin} />
                                 <Text style={[estilos.textoBotao, estiloDoTexto]}>Vamos planejar sua primeira viagem</Text>

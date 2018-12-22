@@ -8,8 +8,8 @@ const estilos = StyleSheet.create({
     wrapperMapa: {
         flex: 1,
         backgroundColor: 'red',
-        height: 400,
-        width: 400,
+        // height: 400,
+        // width: 400,
         justifyContent: 'flex-end',
         alignItems: 'center',
     },

@@ -7,7 +7,7 @@ const Viagem = props => {
         <TouchableOpacity onPress={ props.onPress } style={estilos.wrapper}>
             <View style={estilos.fundoViagem}>
                 <Text style={estilos.nome}>{props.nome}</Text>
-                <Text style={estilos.valor}>{props.precoTotal}</Text>
+                <Text style={estilos.valor}>{props.preco}</Text>
             </View>
         </TouchableOpacity>
     )
